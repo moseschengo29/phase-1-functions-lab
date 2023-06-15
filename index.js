@@ -1,36 +1,38 @@
 // Code your solution in this file!
+const distanceFromHq = 42;
 function distanceFromHqInBlocks(block) {
-    return Math.abs(block - 42);
+    return Math.abs(block - distanceFromHq);
 }
 
 function distanceFromHqInFeet(block) {
-    const blockInFeet = 264; // Assuming each block is 264 feet
-    return Math.abs(block - 42) * blockInFeet;
+    const blockInFeet = 264; 
+    return Math.abs(block - distanceFromHq) * blockInFeet;
 }
 
 function distanceTravelledInFeet(startBlock, endBlock) {
-    const blockInFeet = 264; // Assuming each block is 264 feet
+    const blockInFeet = 264;
     const distance = Math.abs(startBlock - endBlock) * blockInFeet;
     return distance;
 }
 
 function calculatesFarePrice(start, destination) {
-    const blockInFeet = 264; // Assuming each block is 264 feet
+    const blockInFeet = 264; 
   
     const distanceInFeet = Math.abs(start - destination) * blockInFeet;
   
-    // Fare calculation based on distance
+    
     if (distanceInFeet <= 400) {
-      return 0; // Free sample
-    } else if (distanceInFeet > 400 && distanceInFeet <= 2000) {
-      // 2 cents per foot, subtracting the first 400 free feet
-
+      return 0; 
+    } 
+    else if (distanceInFeet > 400 && distanceInFeet <= 2000) {
       const fare = (distanceInFeet - 400) * 0.02;
       return fare 
 
-    } else if (distanceInFeet > 2000 && distanceInFeet <= 2500) {
-      return 25; // $25 flat fare for distance over 2000 feet
-    } else {
-      return 'cannot travel that far'; // Cannot travel over 2500 feet
+    } 
+    else if (distanceInFeet > 2000 && distanceInFeet <= 2500) {
+      return 25;
+    } 
+    else {
+      return 'cannot travel that far'; 
     }
 }
